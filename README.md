@@ -5,10 +5,10 @@ How to cache UITableView cells. Maybe you just don't want them to leave memory.
 
 Apple's dequeueReusableCellWithIdentifier: does a great job at making your UITableView efficient. The majority of
 the time, this is the correct approach. But what about those times where you want a relatively small number of very 
-complex cells? Performance can take a hit when off-screen rendering (software vs hardware drawing) takes place each time a cell is displayed. I 
+complex cells? Performance can take a hit when offscreen-rendering (software vs hardware drawing) takes place each time a cell is displayed. I 
 needed this when I had cells that each contained a collection view whose items had additional drawing/image loading needs.
 
-Off-screen rendering can happen when you do one of the following:
+Offscreen-rendering can happen when you do one of the following:
 
 - Implement drawRect: (even if it's empty!)
 - shouldRasterize = YES;
@@ -18,7 +18,7 @@ Off-screen rendering can happen when you do one of the following:
 
 UITableViewCells are redrawn each time they are dequeued, which can cause a huge drop in scroll performance if software drawing is needed.
 
-Want to know if your app is using off-screen drawing? Use Instruments! In Xcode, run the profiler and choose Core Animation.
+Want to know if your app is using offscreen drawing? Use Instruments! In Xcode, run the profiler and choose Core Animation.
 While your app is running, find the box that says "Color Offscreen-Rendered Yellow"
 
 ![Instruments Image](http://i.imgur.com/Kynx8Tw.png)
