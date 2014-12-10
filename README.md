@@ -21,7 +21,7 @@ UITableViewCells are redrawn each time they are dequeued, which can cause a huge
 Want to know if your app is using off-screen drawing? Use Instruments! In Xcode, run the profiler and choose Core Animation.
 While your app is running, find the box that says "Color Offscreen-Rendered Yellow"
 
-
+![Instruments Image](http://i.imgur.com/Kynx8Tw.png)
 
 ```objective-c
 @interface ViewController ()
